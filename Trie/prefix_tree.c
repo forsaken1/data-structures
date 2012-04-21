@@ -147,7 +147,7 @@ static NodePtrT GetLeftNeighbour(const NodePtrT node) {
     char key = node->key;
     int i, differenceKeyCount, minimalDifference = MAX_CHAR_COUNT;
     
-    /*for(i = 0; i < LINK_LIMIT; i++) {
+    for(i = 0; i < LINK_LIMIT; i++) {
         if(parent->link[i] != NULL && key > parent->link[i]->key) {
             differenceKeyCount = key - parent->link[i]->key;
             if(differenceKeyCount < minimalDifference) {
@@ -155,9 +155,7 @@ static NodePtrT GetLeftNeighbour(const NodePtrT node) {
                 leftNode = parent->link[i];
             }
         }
-    }*/
-	int leftSibling;
-	for (leftSibling = key - 1; leftSibling >= '0' && parent->link[leftSibling] == NULL; --leftSibling);
+    }
     if(minimalDifference != MAX_CHAR_COUNT) return GoToMaximalNode(leftNode);
     else return NULL;
 }
